@@ -1,0 +1,21 @@
+# Copy this file to .dev.vars (which git ignores) and fill in real values for local testing.
+# In production, set each one with:  npx wrangler secret put NAME
+
+# Admin. Locally, DEV_ADMIN_BYPASS=true lets you into /admin on localhost only.
+# In production, set ACCESS_TEAM_DOMAIN and ACCESS_AUD from your Cloudflare Access application.
+DEV_ADMIN_BYPASS=true
+ACCESS_TEAM_DOMAIN=
+ACCESS_AUD=
+
+# Stage 3 - Square (use SANDBOX credentials while testing)
+SQUARE_ENV=sandbox
+SQUARE_ACCESS_TOKEN=
+SQUARE_LOCATION_ID=
+SQUARE_WEBHOOK_SIGNATURE_KEY=
+# Must match the notification URL in Square exactly (used to check webhook signatures)
+SQUARE_WEBHOOK_URL=
+
+# Stage 3 - Resend (order emails)
+RESEND_API_KEY=
+ORDER_NOTIFY_EMAIL=
+EMAIL_FROM=Frank Pinsent <orders@yourdomain.co.uk>

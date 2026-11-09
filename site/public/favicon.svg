@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- A little round slipware pot -->
+  <path d="M26 6h12v6c10 3 17 12 17 23 0 13-10 23-23 23S9 48 9 35c0-11 7-20 17-23z" fill="#ECE5D3" stroke="#1F1611" stroke-width="3"/>
+  <path d="M12 30c6-5 12 5 20 0s14 5 20 0" fill="none" stroke="#1F1611" stroke-width="4" stroke-linecap="round"/>
+  <path d="M11 42c6-4 12 4 21 0s15 4 21 0" fill="none" stroke="#1F1611" stroke-width="4" stroke-linecap="round"/>
+  <path d="M14 52h36" stroke="#9B4F32" stroke-width="5"/>
+</svg>

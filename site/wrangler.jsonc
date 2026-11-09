@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "frank-pinsent-pottery",
+  "main": "src/index.tsx",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Static files (CSS, JS, bundled photos). Anything not found here falls through to the Worker.
+  "assets": { "directory": "./public", "binding": "ASSETS" },
+
+  // Free-tier SQLite database. Run `wrangler d1 create frank-db` and paste the id in before deploying.
+  "d1_databases": [
+    { "binding": "DB", "database_name": "frank-db", "database_id": "REPLACE_WITH_D1_ID", "migrations_dir": "migrations" }
+  ],
+
+  // Free-tier object storage for photos Frank uploads in the admin.
+  "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "frank-media" }],
+
+  // Non-secret settings. Secrets (Square token, Resend key) go in .dev.vars locally
+  // and `wrangler secret put` in production, never in this file.
+  "vars": {
+    "SITE_NAME": "Frank Pinsent",
+    "SHIPPING_PENCE": "500"
+  },
+
+  "observability": { "enabled": true }
+
+  // DEPLOY.md step 7: once the domain is on Cloudflare, uncomment these lines (and put a comma after
+  // the "observability" line above). The site then lives only on the real domain.
+  // "routes": [{ "pattern": "frankpinsent.co.uk", "custom_domain": true }],
+  // "workers_dev": false,
+  // "preview_urls": false
+}
